@@ -31,6 +31,6 @@ public class FollowObject : MonoBehaviour
             _transformToFollow.position.z + _offset.z
         );
 
-        transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime * 10);
     }
 }
