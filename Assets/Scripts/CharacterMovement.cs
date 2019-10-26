@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterController : MonoBehaviour
+public class CharacterMovement : MonoBehaviour
 {
-    private UnityEngine.CharacterController controller;
+    private CharacterController _controller;
     
     [SerializeField]
     public float Speed = 15f;
@@ -13,7 +13,7 @@ public class CharacterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        controller = GetComponent<UnityEngine.CharacterController>();
+        _controller = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -27,6 +27,6 @@ public class CharacterController : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         
-        controller.SimpleMove(Speed * new Vector3(horizontal, 0, vertical));
+        _controller.SimpleMove(Speed * new Vector3(horizontal, 0, vertical));
     }
 }
