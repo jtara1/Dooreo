@@ -11,7 +11,9 @@ public class CharacterMovement : MonoBehaviour
     private bool wasdOnly = false;
     [SerializeField]
     public float Speed = 15f;
-    
+
+    private Vector3 target;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,7 @@ public class CharacterMovement : MonoBehaviour
     void Update()
     {
         Move();
+        Rotation();
     }
 
     void Move()
@@ -39,5 +42,13 @@ public class CharacterMovement : MonoBehaviour
         }
         
         _controller.SimpleMove(Speed * new Vector3(horizontal, 0, vertical));
+    }
+
+    void Rotation()
+    {
+        target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        float angle = Vector3.Angle(target, transform.position);
+        transform.eulerAngles = new Vector3(0,angle,0);
+        Debug.Log(target);
     }
 }
