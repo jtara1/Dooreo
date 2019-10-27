@@ -9,21 +9,24 @@ public class ParticleLauncher : MonoBehaviour
     public Gradient particleColorGradient;
     public ParticleDecalPool splatDecalPool;
 
-    List<ParticleCollisionEvent> collisionEvents;
+    [SerializeField] private float minimumFirePeriodInSeconds = 0.1f;
+    private List<ParticleCollisionEvent> _collisionEvents;
+    private float _lastFiredAtInSeconds = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
-        collisionEvents = new List<ParticleCollisionEvent>();
+        _collisionEvents = new List<ParticleCollisionEvent>();
     }
 
     private void OnParticleCollision(GameObject other)
     {
-        ParticlePhysicsExtensions.GetCollisionEvents(particleLauncher, other, collisionEvents);
+        ParticlePhysicsExtensions.GetCollisionEvents(particleLauncher, other, _collisionEvents);
 
-        for (int i = 0; i < collisionEvents.Count; i++)
+        for (int i = 0; i < _collisionEvents.Count; i++)
         {
-            splatDecalPool.ParticleHit(collisionEvents[i], particleColorGradient);
-            EmitAtLocation(collisionEvents[i]);
+            splatDecalPool.ParticleHit(_collisionEvents[i], particleColorGradient);
+            EmitAtLocation(_collisionEvents[i]);
         }
 //        if(other.tag == "Enemy")
 //        {
@@ -49,8 +52,13 @@ public class ParticleLauncher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire1"))
+//        Debug.Log(Time.fixedTime);
+        if (_lastFiredAtInSeconds + minimumFirePeriodInSeconds <= Time.fixedTime
+            && Input.GetButton("Fire1")
+        )
         {
+            _lastFiredAtInSeconds = Time.fixedTime;
+            
             ParticleSystem.MainModule psMain = particleLauncher.main;
             psMain.startColor = particleColorGradient.Evaluate(Random.Range(0f, 1f));
             particleLauncher.Emit(1);

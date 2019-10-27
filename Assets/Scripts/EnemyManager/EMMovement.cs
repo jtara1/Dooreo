@@ -22,9 +22,9 @@ public class EMMovement : MonoBehaviour
 
     void SetTargetToMoveTo()
     {
-        foreach (GameObject agent in _enemyManager.Enemies)
+        foreach (NavMeshAgent agent in _enemyManager.EnemyNavMeshAgents)
         {
-            agent.GetComponent<NavMeshAgent>().SetDestination(transformToFollow.transform.position);
+            agent.SetDestination(transformToFollow.transform.position);
         }
     }
 }
