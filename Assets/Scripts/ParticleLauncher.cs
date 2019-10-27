@@ -25,6 +25,10 @@ public class ParticleLauncher : MonoBehaviour
             splatDecalPool.ParticleHit(collisionEvents[i], particleColorGradient);
             EmitAtLocation(collisionEvents[i]);
         }
+        if(other.tag == "Enemy")
+        {
+            Destroy(other);
+        }
     }
 
     void EmitAtLocation(ParticleCollisionEvent particleCollisionEvent)
