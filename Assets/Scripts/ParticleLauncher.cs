@@ -27,7 +27,8 @@ public class ParticleLauncher : MonoBehaviour
         }
         if(other.tag == "Enemy")
         {
-            Destroy(other);
+            Health targetHealth = other.GetComponent<Health>();
+            targetHealth.DamageHealth(1);
         }
     }
 
