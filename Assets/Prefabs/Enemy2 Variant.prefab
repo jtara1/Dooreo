@@ -7,10 +7,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1494534638221827393, guid: f835393a7e7df444881ac5345ab7da7f,
+        type: 3}
+      propertyPath: health
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 5638988442968529016, guid: f835393a7e7df444881ac5345ab7da7f,
         type: 3}
       propertyPath: m_Name
-      value: Enemy2
+      value: Enemy2 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5638988442968529016, guid: f835393a7e7df444881ac5345ab7da7f,
         type: 3}
@@ -77,5 +82,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ddec8ed9e3040124b8beceeef824ac19, type: 2}
+    - target: {fileID: 2746895526424143278, guid: f835393a7e7df444881ac5345ab7da7f,
+        type: 3}
+      propertyPath: m_Speed
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f835393a7e7df444881ac5345ab7da7f, type: 3}

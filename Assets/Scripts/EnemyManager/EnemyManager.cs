@@ -9,6 +9,8 @@ public class EnemyManager : MonoBehaviour
     private List<NavMeshAgent> _enemyNavMeshAgents;
     private List<GameObject> _spawners;
 
+    private EMSpawner _spawner;
+
     public List<GameObject> Spawners => _spawners;
     public List<NavMeshAgent> EnemyNavMeshAgents => _enemyNavMeshAgents;
     public List<GameObject> Enemies => _enemies;
@@ -18,6 +20,7 @@ public class EnemyManager : MonoBehaviour
     {
         SetAttributes();
         AddDeathListeners();
+        _spawner = GetComponent<EMSpawner>();
     }
 
     // Update is called once per frame
@@ -51,16 +54,30 @@ public class EnemyManager : MonoBehaviour
     {
         foreach (GameObject enemy in _enemies)
         {
-            enemy.GetComponent<Enemy>().Died.AddListener(OnEnemyDeath);
+            AddDeathListener(enemy);
         }
+    }
+    
+    void AddDeathListener(GameObject enemey)
+    {
+        enemey.GetComponent<Enemy>().Died.AddListener(OnEnemyDeath);
     }
 
     void OnEnemyDeath(GameObject deadEnemy)
     {
         if (_enemyNavMeshAgents.Remove(deadEnemy.GetComponent<NavMeshAgent>()) 
-            && _enemies.Remove(deadEnemy))
+            || _enemies.Remove(deadEnemy))
         {
-            Destroy(deadEnemy);            
+            Destroy(deadEnemy);
+            SpawnAndAddEnemy();
         }
+    }
+
+    void SpawnAndAddEnemy()
+    {
+        GameObject newEnemy = _spawner.Spawn();
+        _enemies.Add(newEnemy);
+        _enemyNavMeshAgents.Add(newEnemy.GetComponent<NavMeshAgent>());
+        AddDeathListener(newEnemy);
     }
 }

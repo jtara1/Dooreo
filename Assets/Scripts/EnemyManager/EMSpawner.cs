@@ -22,12 +22,12 @@ public class EMSpawner : MonoBehaviour
     /// <summary>
     /// Spawn a random enemy at a random spawn point w/ parent being EnemyManager
     /// </summary>
-    void Spawn()
+    public GameObject Spawn()
     {
         int enemyIndex = Random.Range(0, enemyPrefabs.Length - 1);
         int spawnerIndex = Random.Range(0, enemyPrefabs.Length - 1);
 
-        Instantiate(
+        return Instantiate(
             enemyPrefabs[enemyIndex],
             _enemyManager.Spawners[spawnerIndex].transform.position,
             Quaternion.identity,
