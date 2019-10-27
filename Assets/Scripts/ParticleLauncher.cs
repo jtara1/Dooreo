@@ -25,18 +25,21 @@ public class ParticleLauncher : MonoBehaviour
             splatDecalPool.ParticleHit(collisionEvents[i], particleColorGradient);
             EmitAtLocation(collisionEvents[i]);
         }
-        if(other.tag == "Enemy")
-        {
-            Health targetHealth = other.GetComponent<Health>();
-            targetHealth.DamageHealth(1);
-        }
+//        if(other.tag == "Enemy")
+//        {
+//            Health targetHealth = other.GetComponent<Health>();
+//            targetHealth.DamageHealth(1);
+//        }
     }
 
     void EmitAtLocation(ParticleCollisionEvent particleCollisionEvent)
     {
         splatterParticles.transform.position = particleCollisionEvent.intersection;
-        splatterParticles.transform.rotation = Quaternion.LookRotation(particleCollisionEvent.normal);
-        Debug.Log(splatterParticles.transform.rotation.eulerAngles);
+
+        //        splatterParticles.transform.rotation = Quaternion.LookRotation(particleCollisionEvent.normal);
+        splatterParticles.transform.rotation = Quaternion.identity;
+//        Debug.Log(splatterParticles.transform.rotation.eulerAngles);
+
         ParticleSystem.MainModule psMain = splatterParticles.main;
         psMain.startColor = particleColorGradient.Evaluate(Random.Range(0f, 1f));
 

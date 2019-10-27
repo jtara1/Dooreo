@@ -129,8 +129,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 83325513}
-  - component: {fileID: 83325515}
   - component: {fileID: 83325512}
+  - component: {fileID: 83325515}
   - component: {fileID: 83325514}
   m_Layer: 0
   m_Name: EnemyManager
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 83325511}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ce9dbaf1938c394790939d9dc50a1cd, type: 3}
+  m_Script: {fileID: 11500000, guid: bec18eb60208485488c0eb144b07ad29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefabs: []
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 83325511}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bddcc054806a2984991eb5421c8a4f87, type: 3}
+  m_Script: {fileID: 11500000, guid: 270d2c296716bed48abd331bfe8851aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &129997359
