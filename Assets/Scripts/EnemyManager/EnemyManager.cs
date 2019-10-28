@@ -5,35 +5,37 @@ using UnityEngine.AI;
 
 public class EnemyManager : MonoBehaviour
 {
+    public static EnemyManager Instance;
+    
     private List<GameObject> _enemies;
     private List<NavMeshAgent> _enemyNavMeshAgents;
-    private List<GameObject> _spawners;
+    private List<GameObject> _spawnPoints;
 
-    private EMSpawner _spawner;
+    private GameManager _gameManager;
+    private EMSpawner _emSpawner;
 
-    public List<GameObject> Spawners => _spawners;
+    public List<GameObject> SpawnPoints => _spawnPoints;
     public List<NavMeshAgent> EnemyNavMeshAgents => _enemyNavMeshAgents;
     public List<GameObject> Enemies => _enemies;
 
     // Start is called before the first frame update
     void Start()
     {
+        Instance = this;
+        
+        _gameManager = GameManager.Instance;
+        _gameManager.Ping();
+        _emSpawner = GetComponent<EMSpawner>();
+
         SetAttributes();
         AddDeathListeners();
-        _spawner = GetComponent<EMSpawner>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void SetAttributes()
     {
         _enemies = new List<GameObject>();
         _enemyNavMeshAgents = new List<NavMeshAgent>();
-        _spawners = new List<GameObject>();
+        _spawnPoints = new List<GameObject>();
         
         foreach (Transform childTransform in transform)
         {
@@ -44,7 +46,7 @@ public class EnemyManager : MonoBehaviour
                     _enemyNavMeshAgents.Add(childTransform.gameObject.GetComponent<NavMeshAgent>());
                     break;
                 case "Respawn":
-                    _spawners.Add(childTransform.gameObject);
+                    _spawnPoints.Add(childTransform.gameObject);
                     break;
             }
         }
@@ -58,24 +60,29 @@ public class EnemyManager : MonoBehaviour
         }
     }
     
-    void AddDeathListener(GameObject enemey)
+    void AddDeathListener(GameObject enemy)
     {
-        enemey.GetComponent<Enemy>().Died.AddListener(OnEnemyDeath);
+        enemy.GetComponent<Enemy>().Died.AddListener(OnEnemyDeath);
+        _gameManager.AddEnemyDeathListener(enemy);
     }
 
     void OnEnemyDeath(GameObject deadEnemy)
     {
-        if (_enemyNavMeshAgents.Remove(deadEnemy.GetComponent<NavMeshAgent>()) 
+        if (_enemyNavMeshAgents.Remove(deadEnemy.GetComponent<NavMeshAgent>())
             || _enemies.Remove(deadEnemy))
         {
             Destroy(deadEnemy);
             SpawnAndAddEnemy();
         }
+        else
+        {
+            Debug.LogWarning("EM: enemy already removed from agent & enemies lists");
+        }
     }
 
     void SpawnAndAddEnemy()
     {
-        GameObject newEnemy = _spawner.Spawn();
+        GameObject newEnemy = _emSpawner.Spawn();
         _enemies.Add(newEnemy);
         _enemyNavMeshAgents.Add(newEnemy.GetComponent<NavMeshAgent>());
         AddDeathListener(newEnemy);

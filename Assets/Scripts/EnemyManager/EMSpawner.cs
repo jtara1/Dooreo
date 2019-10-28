@@ -7,16 +7,9 @@ public class EMSpawner : MonoBehaviour
     private EnemyManager _enemyManager;
     [SerializeField] private GameObject[] enemyPrefabs;
     
-    // Start is called before the first frame update
     void Start()
     {
         _enemyManager = GetComponent<EnemyManager>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     /// <summary>
@@ -29,7 +22,7 @@ public class EMSpawner : MonoBehaviour
 
         return Instantiate(
             enemyPrefabs[enemyIndex],
-            _enemyManager.Spawners[spawnerIndex].transform.position,
+            _enemyManager.SpawnPoints[spawnerIndex].transform.position,
             Quaternion.identity,
             transform
         );

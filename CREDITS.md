@@ -6,3 +6,4 @@ additional assets created by:
 | Kenney NL | Crosshair Pack | https://opengameart.org/content/crosshair-pack-200× |
 | pracalic | Top Down Simple Monsters | https://opengameart.org/content/top-down-simple-monsters |
 | Kenny NL | 3d Characters | https://www.kenney.nl/assets/3d-characters |
+| Lauren Thompson | Font (Caviar Dreams) | https://www.1001freefonts.com/caviar-dreams.font |

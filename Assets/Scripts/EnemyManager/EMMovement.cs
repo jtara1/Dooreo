@@ -24,7 +24,7 @@ public class EMMovement : MonoBehaviour
     {
         foreach (NavMeshAgent agent in _enemyManager.EnemyNavMeshAgents)
         {
-            agent.SetDestination(transformToFollow.transform.position);
+            agent.SetDestination(transformToFollow.position);
         }
     }
 }

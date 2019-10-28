@@ -5,12 +5,7 @@ using UnityEngine.AI;
 
 public class Enemy : Agent
 {
-//    [SerializeField] private float speed = 2f;
-
-    private void Start()
-    {
-//        GetComponent<NavMeshAgent>().speed = speed;
-    }
+    [SerializeField] private int scoreValue = 100;
     
     private void OnParticleCollision(GameObject other)
     {
@@ -24,4 +19,6 @@ public class Enemy : Agent
         
         TakeDamage(hitCount);
     }
+
+    public int ScoreValue { get; set; }
 }
