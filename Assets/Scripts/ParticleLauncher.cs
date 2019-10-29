@@ -7,6 +7,7 @@ public class ParticleLauncher : MonoBehaviour
     public ParticleSystem particleLauncher;
     public ParticleSystem splatterParticles;
     public Gradient particleColorGradient;
+    public Gradient splatColorGradient;
     public ParticleDecalPool splatDecalPool;
 
     [SerializeField] private float minimumFirePeriodInSeconds = 0.1f;
@@ -25,7 +26,7 @@ public class ParticleLauncher : MonoBehaviour
 
         for (int i = 0; i < _collisionEvents.Count; i++)
         {
-            splatDecalPool.ParticleHit(_collisionEvents[i], particleColorGradient);
+            splatDecalPool.ParticleHit(_collisionEvents[i], splatColorGradient);
             EmitAtLocation(_collisionEvents[i]);
         }
 //        if(other.tag == "Enemy")
@@ -43,8 +44,8 @@ public class ParticleLauncher : MonoBehaviour
         splatterParticles.transform.rotation = Quaternion.identity;
 //        Debug.Log(splatterParticles.transform.rotation.eulerAngles);
 
-        ParticleSystem.MainModule psMain = splatterParticles.main;
-        psMain.startColor = particleColorGradient.Evaluate(Random.Range(0f, 1f));
+        //ParticleSystem.MainModule psMain = splatterParticles.main;
+        //psMain.startColor = particleColorGradient.Evaluate(Random.Range(0f, 1f));
 
         splatterParticles.Emit(1);
     }

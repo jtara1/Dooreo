@@ -7,6 +7,7 @@ public class ParticleDecalPool : MonoBehaviour
     public int maxDecals = 100;
     public float decalSizeMin = .5f;
     public float decalSizeMax = 1.5f;
+    public float yOffset = -3f;
 
     private ParticleSystem decalParticleSystem;
     private int particleDecalDataIndex;
@@ -38,7 +39,7 @@ public class ParticleDecalPool : MonoBehaviour
         }
 
         particleData[particleDecalDataIndex].position = particleCollisionEvent.intersection;
-        Vector3 particleRotationEuler = Quaternion.LookRotation(particleCollisionEvent.normal).eulerAngles;
+        Vector3 particleRotationEuler = new Vector3(0, 0, 0); //Quaternion.LookRotation(Vector3.up).eulerAngles;
         particleRotationEuler.z = Random.Range(0, 360);
         particleData[particleDecalDataIndex].rotation = particleRotationEuler;
         particleData[particleDecalDataIndex].size = Random.Range(decalSizeMin, decalSizeMax);
@@ -52,7 +53,7 @@ public class ParticleDecalPool : MonoBehaviour
     {
         for (int i = 0; i < particleData.Length; i++)
         {
-            particles[i].position = particleData[i].position;
+            particles[i].position = particleData[i].position + new Vector3(0, yOffset, 0);//hacky way so no raycast
             particles[i].rotation3D = particleData[i].rotation;
             particles[i].startSize = particleData[i].size;
             particles[i].startColor = particleData[i].color;
