@@ -17,11 +17,6 @@ public class UIScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    private void OnGUI()
-    {
         _textMeshProUgui.text = $"Score: {_gmScore.Score.ToString()}";
     }
 }

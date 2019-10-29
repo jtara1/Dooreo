@@ -25,13 +25,7 @@ public class Agent : MonoBehaviour
         if (!_isDead)
         {
             _isDead = true;
-            
             Died.Invoke(gameObject);
-            if (Died.GetPersistentEventCount() == 0)
-            {
-//                Debug.LogWarning("Agent: no one listened to agent death");
-//                Destroy(gameObject);
-            }   
         }
     }
 }
