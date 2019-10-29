@@ -62,8 +62,8 @@ public class EnemyManager : MonoBehaviour
     
     void AddDeathListener(GameObject enemy)
     {
-        enemy.GetComponent<Enemy>().Died.AddListener(OnEnemyDeath);
         _gameManager.AddEnemyDeathListener(enemy);
+        enemy.GetComponent<Enemy>().Died.AddListener(OnEnemyDeath);
     }
 
     void OnEnemyDeath(GameObject deadEnemy)

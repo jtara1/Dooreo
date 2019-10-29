@@ -11,7 +11,6 @@ public class Agent : MonoBehaviour
 
     public readonly UnityEvent<GameObject> Died = new AgentDiedEvent();
 
-
     public void TakeDamage(int damage)
     {
         health -= damage;
@@ -30,8 +29,8 @@ public class Agent : MonoBehaviour
             Died.Invoke(gameObject);
             if (Died.GetPersistentEventCount() == 0)
             {
-                Debug.LogWarning("Agent: no one listened to agent death");
-                Destroy(gameObject);
+//                Debug.LogWarning("Agent: no one listened to agent death");
+//                Destroy(gameObject);
             }   
         }
     }
