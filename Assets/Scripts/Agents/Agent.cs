@@ -6,9 +6,11 @@ using UnityEngine.Events;
 public class Agent : MonoBehaviour
 {
     private bool _isDead = false;
-    
+
     [SerializeField] protected int health = 10;
 
+    public bool IsDead => _isDead;
+    
     /// <summary>
     /// Anything that needs to do something w/ enemy before he is destroyed
     /// </summary>
