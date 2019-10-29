@@ -11,6 +11,5 @@ public class GMScore : MonoBehaviour
     public void AddScore(GameObject enemy)
     {
         _score += enemy.GetComponent<Enemy>().ScoreValue;
-        Debug.Log(Score.ToString());
     }
 }

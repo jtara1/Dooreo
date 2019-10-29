@@ -24,7 +24,6 @@ public class EnemyManager : MonoBehaviour
         Instance = this;
         
         _gameManager = GameManager.Instance;
-        _gameManager.Ping();
         _emSpawner = GetComponent<EMSpawner>();
 
         SetAttributes();
