@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public class Rotater : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class Rotater : MonoBehaviour
     void Start()
     {
         _targetRotation = rotateAround.rotation.y;
-        Rotate();
+//        Rotate();
     }
 
     // Update is called once per frame
@@ -30,7 +31,7 @@ public class Rotater : MonoBehaviour
     {
         if (Math.Abs(_targetRotation - rotateAround.rotation.y) > 0.01)
         {
-            transform.RotateAround(_targetPoint, rotateAround.up, _targetRotation * Time.deltaTime * speed);
+            transform.RotateAround(Vector3.zero, rotateAround.position, _targetRotation * Time.deltaTime * speed);
 //            transform.Rotate(rotateAround.up, _targetRotation / 36 * Time.deltaTime * speed, Space.Self);
         }
         else
@@ -42,7 +43,18 @@ public class Rotater : MonoBehaviour
     public void Rotate()
     {
         _rotated = false;
-        _targetRotation = rotateAround.rotation.y + 360f;
+        _targetRotation = 30f;
+
+//        _targetPoint = transform.position * -1;
+
+//        Vector2 randomPoint = UnityEngine.Random.insideUnitCircle; 
+//        _targetPoint = rotateAround.position +  new Vector3(randomPoint.x, 0, randomPoint.y);
+
         _targetPoint = transform.position * -1;
+        _targetPoint.y = transform.position.y + transform.parent.transform.position.y;
+        
+        Debug.Log(_targetPoint);
+        Debug.Log(_targetRotation);
+        Debug.Log(rotateAround.up);
     }
 }
