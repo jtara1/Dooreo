@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class ForceFieldDamage : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int damageDealt = 1;
+    public float intervalBetweenDamage = .5f;
 
-    // Update is called once per frame
-    void Update()
+    private float timeDealtDamage;
+
+    private void OnTriggerStay(Collider other)
     {
-        
+        if (other.tag == "Player" && (Time.time > timeDealtDamage + intervalBetweenDamage))
+        {
+            other.GetComponent<Character>().TakeDamage(damageDealt);
+            timeDealtDamage = Time.time;
+        }
     }
 }
