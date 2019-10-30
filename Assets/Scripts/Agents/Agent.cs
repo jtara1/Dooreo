@@ -9,6 +9,8 @@ public class Agent : MonoBehaviour
 
     [SerializeField] protected int health = 10;
 
+    public int Health => health;
+
     public bool IsDead => _isDead;
     
     /// <summary>

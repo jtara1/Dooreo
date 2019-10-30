@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class Character : Agent
 {
+    public static Character Instance;
     public float intervalBetweenDamage = .5f;
 
     private float timeHurt;
 
     void Start()
     {
+        Instance = this;
+        
         Died.AddListener(OnDeath);
     }
 
     private void OnDeath(GameObject self)
     {
         Destroy(gameObject);
+        GMScore.Instance.GameWon.Invoke(); // TODO: rm this, the laziest way to deal with player "lose" & death
     }
 
     private void OnParticleCollision(GameObject other)

@@ -22,11 +22,6 @@ public class GameManager : MonoBehaviour
         enemy.GetComponent<Enemy>().Died.AddListener(_gmScore.AddScore);
     }
 
-    public void Ping()
-    {
-        Debug.Log("GM: Pong");
-    }
-
     private void GameEnd()
     {
         ShowVictoryText();

@@ -8,11 +8,10 @@ public class EnemyShooting : MonoBehaviour
     public ParticleSystem splatterParticles;
     public Gradient particleColorGradient;
     public Gradient splatColorGradient;
-    public GameObject player;
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.LookAt(player.transform);
+        transform.LookAt(Character.Instance.transform);
     }
 }
