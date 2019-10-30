@@ -12,7 +12,6 @@ public class MultiAudioSource : MonoBehaviour
 
     public AudioSource AudioSource => _audioSource;
 
-    // Start is called before the first frame update
     void Start()
     {
         _audioSource = gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
@@ -25,7 +24,7 @@ public class MultiAudioSource : MonoBehaviour
 
     public AudioClip GetRandomClip()
     {
-        int randomIndex = Random.Range(0, audioClips.Length - 1);
+        int randomIndex = Random.Range(0, audioClips.Length);
         return audioClips[randomIndex];
     }
 }
