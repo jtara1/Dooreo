@@ -12,6 +12,8 @@ public class Character : Agent
 
     void Start()
     {
+        Cursor.visible = false; // TODO: add some settings class
+        
         Instance = this;
 
         _audio = GetComponent<MultiAudioSource>();
