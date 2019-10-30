@@ -8,12 +8,20 @@ public class Character : Agent
     public float intervalBetweenDamage = .5f;
 
     private float timeHurt;
+    private MultiAudioSource _audio;
 
     void Start()
     {
         Instance = this;
-        
+
+        _audio = GetComponent<MultiAudioSource>();
         Died.AddListener(OnDeath);
+    }
+
+    public void TakeDamage(int damage)
+    {
+        base.TakeDamage(damage);
+        _audio.PlayRandom();
     }
 
     private void OnDeath(GameObject self)

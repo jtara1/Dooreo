@@ -11449,6 +11449,7 @@ GameObject:
   - component: {fileID: 1652859193}
   - component: {fileID: 1652859195}
   - component: {fileID: 1652859194}
+  - component: {fileID: 1652859196}
   m_Layer: 5
   m_Name: HPText
   m_TagString: Untagged
@@ -11594,6 +11595,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1652859192}
   m_CullTransparentMesh: 0
+--- !u!114 &1652859196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652859192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f3575429e035b4b9ba6579c2a90e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1757104384
 GameObject:
   m_ObjectHideFlags: 0
@@ -16751,6 +16764,7 @@ GameObject:
   - component: {fileID: 2140488879}
   - component: {fileID: 2140488880}
   - component: {fileID: 2140488875}
+  - component: {fileID: 2140488881}
   m_Layer: 8
   m_Name: Character
   m_TagString: Player
@@ -16854,6 +16868,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef3e5d06bdffc3e45aad5ba744919bcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2140488881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140488873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd44a944a15040641b38c8f98cda71ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 8c16f33cf2497704a93df2280f08bdc1, type: 3}
+  - {fileID: 8300000, guid: a2868ba1ac500fc45a37fdd610d170ca, type: 3}
+  - {fileID: 8300000, guid: e56fccaefc791d94fb85fdf9864d7a17, type: 3}
+  - {fileID: 8300000, guid: 932748b6bf9d1f54db105471706668ab, type: 3}
+  - {fileID: 8300000, guid: ca867517b480fb74c88805829e2f2826, type: 3}
+  - {fileID: 8300000, guid: fda9e63955de31d4ca8528295c357fc8, type: 3}
+  - {fileID: 8300000, guid: 210b95e9654d9894d831c2ad329c709b, type: 3}
 --- !u!1001 &886403778816914811
 PrefabInstance:
   m_ObjectHideFlags: 0
