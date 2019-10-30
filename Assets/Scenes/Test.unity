@@ -16973,6 +16973,22 @@ PrefabInstance:
       propertyPath: InheritVelocityModule.m_Curve.scalar
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 385715520, guid: b0808a16313bc524bb05226ec40bfe51, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 385715520, guid: b0808a16313bc524bb05226ec40bfe51, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 385715520, guid: b0808a16313bc524bb05226ec40bfe51, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 385715520, guid: b0808a16313bc524bb05226ec40bfe51, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 385715518, guid: b0808a16313bc524bb05226ec40bfe51, type: 3}
       propertyPath: player
       value: 
