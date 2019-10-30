@@ -17,8 +17,8 @@ public class EMSpawner : MonoBehaviour
     /// </summary>
     public GameObject Spawn()
     {
-        int enemyIndex = Random.Range(0, enemyPrefabs.Length - 1);
-        int spawnerIndex = Random.Range(0, enemyPrefabs.Length - 1);
+        int enemyIndex = Random.Range(0, enemyPrefabs.Length);
+        int spawnerIndex = Random.Range(0, enemyPrefabs.Length);
 
         return Instantiate(
             enemyPrefabs[enemyIndex],
