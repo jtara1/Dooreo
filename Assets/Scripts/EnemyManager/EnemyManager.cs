@@ -79,7 +79,7 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    void SpawnAndAddEnemy()
+    public void SpawnAndAddEnemy()
     {
         GameObject newEnemy = _emSpawner.Spawn();
         _enemies.Add(newEnemy);

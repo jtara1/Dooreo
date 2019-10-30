@@ -6,10 +6,12 @@ public class EMSpawner : MonoBehaviour
 {
     private EnemyManager _enemyManager;
     [SerializeField] private GameObject[] enemyPrefabs;
+    [SerializeField] private float spawnAdditionalEnemyPeriodInSeconds = 15f;
     
     void Start()
     {
         _enemyManager = GetComponent<EnemyManager>();
+        StartCoroutine(SpawnAdditionalEnemy());
     }
 
     /// <summary>
@@ -26,5 +28,11 @@ public class EMSpawner : MonoBehaviour
             Quaternion.identity,
             transform
         );
+    }
+
+    private IEnumerator SpawnAdditionalEnemy()
+    {
+        yield return new WaitForSeconds(spawnAdditionalEnemyPeriodInSeconds);
+        _enemyManager.SpawnAndAddEnemy();
     }
 }

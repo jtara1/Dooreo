@@ -9,7 +9,9 @@ public class GMScore : MonoBehaviour
     
     private int _score = 0;
     [SerializeField] private int scoreToWin = 10000;
-    
+
+    public int ScoreToWin => scoreToWin;
+
     public readonly UnityEvent GameWon = new UnityEvent();
 
     public int Score => _score;

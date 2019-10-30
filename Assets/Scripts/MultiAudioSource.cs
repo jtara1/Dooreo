@@ -17,7 +17,7 @@ public class MultiAudioSource : MonoBehaviour
         _audioSource = gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
     }
 
-    public void PlayRandom(float volume = 1f)
+    public void PlayRandom(float volume = 0.7f)
     {
         _audioSource.PlayOneShot(GetRandomClip(), volume);
     }
