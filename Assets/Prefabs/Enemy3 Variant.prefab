@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!135 &974496032
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426835569093801337}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0.00000023841858, y: 0, z: 0.00000023841858}
 --- !u!1001 &6740927116219936001
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -75,7 +88,17 @@ PrefabInstance:
     - target: {fileID: 2746895526424143278, guid: f835393a7e7df444881ac5345ab7da7f,
         type: 3}
       propertyPath: m_Speed
-      value: 12
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746895526424143278, guid: f835393a7e7df444881ac5345ab7da7f,
+        type: 3}
+      propertyPath: m_Acceleration
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746895526424143278, guid: f835393a7e7df444881ac5345ab7da7f,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 1494534638221827393, guid: f835393a7e7df444881ac5345ab7da7f,
         type: 3}
@@ -99,3 +122,9 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: e7bffaa24a3447f4c9a35d4d595d1a21, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f835393a7e7df444881ac5345ab7da7f, type: 3}
+--- !u!1 &1426835569093801337 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5638988442968529016, guid: f835393a7e7df444881ac5345ab7da7f,
+    type: 3}
+  m_PrefabInstance: {fileID: 6740927116219936001}
+  m_PrefabAsset: {fileID: 0}

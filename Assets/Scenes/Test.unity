@@ -16602,7 +16602,7 @@ GameObject:
   - component: {fileID: 2140488875}
   m_Layer: 8
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16633,7 +16633,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150d19c385c9f104b9ab1ec8d778e835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 30000
+  intervalBetweenDamage: 0.5
 --- !u!33 &2140488876
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -16769,6 +16770,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 75
       objectReference: {fileID: 0}
+    - target: {fileID: 385715520, guid: b0808a16313bc524bb05226ec40bfe51, type: 3}
+      propertyPath: InheritVelocityModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 385715520, guid: b0808a16313bc524bb05226ec40bfe51, type: 3}
+      propertyPath: InheritVelocityModule.m_Curve.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 385715518, guid: b0808a16313bc524bb05226ec40bfe51, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2140488873}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0808a16313bc524bb05226ec40bfe51, type: 3}
 --- !u!1001 &6648770267154743403
