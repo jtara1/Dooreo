@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
         _gmScore = GetComponent<GMScore>();
+        _gmScore.GameWon.AddListener(GameEnd);
     }
 
     public void AddEnemyDeathListener(GameObject enemy)
@@ -22,5 +23,17 @@ public class GameManager : MonoBehaviour
     public void Ping()
     {
         Debug.Log("GM: Pong");
+    }
+
+    private void GameEnd()
+    {
+        Debug.Log("End Game");
+        StartCoroutine("QuitGame", new object[] {5})
+    }
+
+    private IEnumerator QuitGame(object[] args)
+    {
+        yield return new WaitForSeconds((int)args[0]);
+        Application.Quit();
     }
 }
