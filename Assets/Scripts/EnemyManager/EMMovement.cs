@@ -17,7 +17,7 @@ public class EMMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SetTargetToMoveTo();
+//        SetTargetToMoveTo();
     }
 
     void SetTargetToMoveTo()
