@@ -4837,7 +4837,7 @@ PrefabInstance:
     - target: {fileID: 5638988442968529016, guid: f835393a7e7df444881ac5345ab7da7f,
         type: 3}
       propertyPath: m_Name
-      value: Enemy2
+      value: Enemy2 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5506260879612489831, guid: f835393a7e7df444881ac5345ab7da7f,
         type: 3}
@@ -4924,6 +4924,10 @@ PrefabInstance:
       propertyPath: audioClips.Array.data[2]
       value: 
       objectReference: {fileID: 8300000, guid: 7cb132b7b0009b049a78f6d7bde3f7c8, type: 3}
+    - target: {fileID: 1809188274, guid: f835393a7e7df444881ac5345ab7da7f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f835393a7e7df444881ac5345ab7da7f, type: 3}
 --- !u!4 &8361061968395111365 stripped

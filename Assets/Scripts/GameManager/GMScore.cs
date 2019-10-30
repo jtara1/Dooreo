@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class GMScore : MonoBehaviour
 {
     private int _score = 0;
-    [SerializeField] private int scoreToWin = 100;
+    [SerializeField] private int scoreToWin = 10000;
     
     public readonly UnityEvent GameWon = new UnityEvent();
 
