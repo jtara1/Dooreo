@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 1494534638221827393}
   - component: {fileID: 228022724202723973}
   m_Layer: 0
-  m_Name: Enemy1
+  m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -272,3 +272,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 34ab034da4417e742ae098809b685628, type: 3}
   - {fileID: 8300000, guid: ef10b62738e83f14aa07b9a1d6019331, type: 3}
   - {fileID: 8300000, guid: eb0333d9f08179340a04eee53aaf2265, type: 3}
+  - {fileID: 8300000, guid: 01b4a882ce8718249a2c160b4fceed4a, type: 3}
+  - {fileID: 8300000, guid: 930ab40f75277ad4594eed4b92addc16, type: 3}
+  - {fileID: 8300000, guid: 7cb132b7b0009b049a78f6d7bde3f7c8, type: 3}
+  - {fileID: 8300000, guid: 8444121f78fd7f148b4162a1c506aede, type: 3}
+  - {fileID: 8300000, guid: 7cf543f1b8203c146be7d61c53be89ed, type: 3}
+  - {fileID: 8300000, guid: e7bffaa24a3447f4c9a35d4d595d1a21, type: 3}
+  - {fileID: 8300000, guid: 475b6e9aa31da8b449e0f7ea57c93d0b, type: 3}
+  - {fileID: 8300000, guid: a826c0ee4ccb7bc45a616f4cf7b1b829, type: 3}
+  - {fileID: 8300000, guid: 2e3db93fe504a30408f794dd9f0ad616, type: 3}
+  - {fileID: 8300000, guid: d352f6495c908e14db3cc56ecb5b5be7, type: 3}
+  - {fileID: 8300000, guid: a8382a1807f32d74d8be361cd776ef72, type: 3}
