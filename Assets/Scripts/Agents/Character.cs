@@ -9,6 +9,9 @@ public class Character : Agent
 
     private float timeHurt;
     private MultiAudioSource _audio;
+    public Material characterMaterial;
+    private Color originalColor;
+    public Color damageColor;
 
     void Start()
     {
@@ -18,12 +21,23 @@ public class Character : Agent
 
         _audio = GetComponent<MultiAudioSource>();
         Died.AddListener(OnDeath);
+        originalColor = Color.white;
+
+    }
+
+    private void FixedUpdate()
+    {
+        if(Time.time > timeHurt + intervalBetweenDamage)
+        {
+            characterMaterial.color = originalColor;
+        }   
     }
 
     public void TakeDamage(int damage)
     {
         base.TakeDamage(damage);
         _audio.PlayRandom();
+        characterMaterial.color = damageColor;
     }
 
     private void OnDeath(GameObject self)
