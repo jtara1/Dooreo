@@ -9,3 +9,4 @@ additional assets created by:
 | Lauren Thompson | Font (Caviar Dreams) | https://www.1001freefonts.com/caviar-dreams.font |
 | tebruno99 | 1950's Scifi setting indoor tileset with kitchen appliances. | https://opengameart.org/content/1950s-scifi-setting-indoor-tileset-with-kitchen-appliances |
 | ArcadeParty | Zombie / Skeleton / Monster Voice Effects | https://opengameart.org/content/zombie-skeleton-monster-voice-effects |
+| ansimuz | Industrial Parallax Background | https://opengameart.org/content/industrial-parallax-background |
