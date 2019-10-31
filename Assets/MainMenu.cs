@@ -11,13 +11,6 @@ public class MainMenu : MonoBehaviour
     public GameObject aboutText;
     public GameObject exitAboutButton;
 
-
-
-    private void Start()
-    {
-        
-    }
-    // Start is called before the first frame update
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -25,7 +18,6 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        Debug.Log("QUIT!");
         Application.Quit();
     }
 
