@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator QuitGame(object[] args)
     {
         yield return new WaitForSeconds((int)args[0]);
-        if (Application.isEditor) UnityEditor.EditorApplication.isPaused = true;
+//        if (Application.isEditor) UnityEditor.EditorApplication.isPaused = true;
         Application.Quit();
     }
 }
