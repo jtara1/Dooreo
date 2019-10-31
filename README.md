@@ -5,7 +5,7 @@ game for https://itch.io/jam/weekly-game-jam-120
 
 ## Demos
 
-https://github.com/jtara1/Dooreo/tree/master/_ReleasePreviews
+[preview game](/_ReleasePreviews/README.md]
 
 ## Created By
 
