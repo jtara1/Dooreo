@@ -1,5 +1,5 @@
 # Dooreo
-"no, it doesn't", no wait make that, "no, it isn't"
+"no, it doesn't"
 
 game for https://itch.io/jam/weekly-game-jam-120
 
