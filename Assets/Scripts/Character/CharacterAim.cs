@@ -55,7 +55,7 @@ public class CharacterAim : MonoBehaviour
         closenessTo45Degrees = Mathf.Max(closenessTo45Degrees, 0);
 
         float correction = CharacterAim.ASPECT_RATIO_16_BY_9_BIAS * closenessTo45Degrees;
-        return degrees + (addCorrection ? 1 : -1) * 15 * closenessTo45Degrees;
+        return degrees + (addCorrection ? 1 : -1) * correction;
     }
     
     Vector3 GetCenter()
